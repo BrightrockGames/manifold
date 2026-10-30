@@ -662,8 +662,16 @@ uint32_t* manifold_meshgl_merge_to_vert(void* mem, ManifoldMeshGL* m) {
   return copy_data(mem, from_c(m)->mergeToVert);
 }
 
+void manifold_meshgl_set_run_index(ManifoldMeshGL* m, uint32_t* arr, size_t len) {
+    from_c(m)->runIndex = vector_of_array(arr, len);
+}
+
 uint32_t* manifold_meshgl_run_index(void* mem, ManifoldMeshGL* m) {
   return copy_data(mem, from_c(m)->runIndex);
+}
+
+void manifold_meshgl_set_run_original_id(ManifoldMeshGL* m, uint32_t* arr, size_t len) {
+    from_c(m)->runOriginalID = vector_of_array(arr, len);
 }
 
 uint32_t* manifold_meshgl_run_original_id(void* mem, ManifoldMeshGL* m) {
